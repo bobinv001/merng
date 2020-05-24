@@ -1,8 +1,8 @@
 import { ObjectType, Field, ID, Int } from 'type-graphql';
-import { prop as Property, getModelForClass } from '@typegoose/typegoose';
-// import { Ref } from "../types";
-// import {Categories} from "./Categories";
+import { prop as Property, getModelForClass, Ref } from '@typegoose/typegoose';
 import { __Type } from 'graphql';
+
+import { Categories } from './Categories';
 
 @ObjectType({ description: 'The Book model' })
 export class Book {
@@ -23,7 +23,7 @@ export class Book {
 
   @Field()
   @Property()
-  publishDate: Date;
+  publish_date: Date;
 
   @Field((_type) => Int)
   @Property()
@@ -33,10 +33,11 @@ export class Book {
   @Property()
   price: number;
 
-  //   @Field((_type) => String)
-  //   @Property({ ref: Categories })
-  //   category_id: Ref<Categories>;
-  //   _doc: any;
+  @Field((_type) => String)
+  @Property({ ref: Categories })
+  category_id: Ref<Categories>;
+
+  _doc: any;
 }
 
 export const BookModel = getModelForClass(Book);

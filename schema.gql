@@ -6,12 +6,35 @@
 """The Book model"""
 type Book {
   author: String!
+  category_id: String!
   id: ID!
   price: Int!
-  publishDate: DateTime!
+  publish_date: DateTime!
   review: Float!
   stock: Int!
   title: String!
+}
+
+input BookInput {
+  author: String!
+  category_id: String!
+  price: Float!
+  publish_date: DateTime!
+  review: Float!
+  stock: Float!
+  title: String!
+}
+
+"""The Categories model"""
+type Categories {
+  description: String!
+  id: ID!
+  name: String!
+}
+
+input CategoriesInput {
+  description: String!
+  name: String!
 }
 
 """
@@ -19,7 +42,16 @@ The javascript `Date` as string. Type represents date and time as the ISO Date s
 """
 scalar DateTime
 
+type Mutation {
+  addBook(data: BookInput!): Book!
+  addCategory(data: CategoriesInput!): Categories!
+  deleteBook(id: String!): Boolean!
+  deleteCategory(id: String!): Boolean!
+}
+
 type Query {
   getAllBooks: [Book!]!
+  getAllCategories: [Categories!]!
   getBook(id: String!): Book!
+  getCategory(id: String!): Categories!
 }

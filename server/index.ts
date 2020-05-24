@@ -5,10 +5,11 @@ import { buildSchema } from 'type-graphql';
 import mongoose from 'mongoose';
 
 import { BookResolver } from './resolvers/Book';
+import { CategoriesResolver } from './resolvers/Categories';
 
 (async () => {
   const schema = await buildSchema({
-    resolvers: [BookResolver],
+    resolvers: [BookResolver, CategoriesResolver],
     emitSchemaFile: true,
     validate: false,
   });
