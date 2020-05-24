@@ -12,8 +12,6 @@
     "prettier:format": "prettier --config .prettierrc '**/*.ts' --write",
     "prettier:watch": "onchange '**/*.ts' -- prettier --write {{changed}}"
   },
-  
-  
   "husky": {
     "hooks": {
       "pre-commit": "npm run prettier:format && npm run lint"
@@ -22,20 +20,27 @@
   "author": "Bobin Varghese",
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "^2.13.1",
+    "@typegoose/typegoose": "^7.1.3",
+    "apollo-server-express": "^2.13.1",
+    "class-validator": "^0.12.2",
+    "express": "^4.17.1",
     "graphql": "^15.0.0",
-    "graphql-tag": "^2.10.3",
-    "mongoose": "^5.9.15"
+    "mongoose": "^5.9.15",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.0.0-rc.2"
   },
   "devDependencies": {
+    "@types/express": "github:types/express",
+    "@types/graphql": "^14.5.0",
+    "@types/mongoose": "^5.7.21",
     "@types/node": "^14.0.5",
     "@typescript-eslint/eslint-plugin": "^3.0.0",
     "@typescript-eslint/parser": "^3.0.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",
-    "npm-run-all": "^4.1.5",
     "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
     "onchange": "^7.0.2",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.0",
