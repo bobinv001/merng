@@ -1,0 +1,58 @@
+{
+  "name": "merng",
+  "version": "1.0.0",
+  "description": "a simple application using react apollo graphQL mongoDB",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "start:prod": "npm run build && node build/index.js",
+    "start:dev": "npm-run-all --parallel prettier:watch nodemon",
+    "nodemon": "nodemon",
+    "lint": "eslint . --ext .ts",
+    "prettier:format": "prettier --config .prettierrc '**/*.ts' --write",
+    "prettier:watch": "onchange '**/*.ts' -- prettier --write {{changed}}"
+  },
+  
+  
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier:format && npm run lint"
+    }
+  },
+  "author": "Bobin Varghese",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.13.1",
+    "graphql": "^15.0.0",
+    "graphql-tag": "^2.10.3",
+    "mongoose": "^5.9.15"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.5",
+    "@typescript-eslint/eslint-plugin": "^3.0.0",
+    "@typescript-eslint/parser": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "npm-run-all": "^4.1.5",
+    "nodemon": "^2.0.4",
+    "onchange": "^7.0.2",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "server"
+    ],
+    "exec": "node --inspect=5858 -r ts-node/register ./server/index.ts",
+    "ext": "ts"
+  }
+}
