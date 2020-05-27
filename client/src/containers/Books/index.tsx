@@ -26,7 +26,12 @@ const Books = () => {
             {books &&
               books.map((book) => (
                 <Grid.Column key={book.id} style={{ marginBottom: 20 }}>
-                  {book.title}
+                  <div>Title: {book.title}</div>
+                  <div> Author: {book.author}</div>
+                  <div> Review: {book.review}</div>
+                  <div>Stock: {book.stock}</div>
+                  <div> Price: {book.price}</div>
+                  <div> Published date: {book.publish_date}</div>
                 </Grid.Column>
               ))}
           </Transition.Group>
