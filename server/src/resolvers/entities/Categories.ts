@@ -4,15 +4,15 @@ import { prop as Property, getModelForClass } from '@typegoose/typegoose';
 @ObjectType({ description: 'The Categories model' })
 export class Categories {
   @Field(() => ID)
-  id: string;
+  id!: string;
 
   @Field()
   @Property()
-  name: String;
+  name!: String;
 
   @Field()
   @Property()
-  description: String;
+  description!: String;
 }
 
 export const CategoriesModel = getModelForClass(Categories);

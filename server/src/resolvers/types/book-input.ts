@@ -2,29 +2,29 @@ import { ObjectId } from 'mongodb';
 import { InputType, Field } from 'type-graphql';
 import { Length } from 'class-validator';
 
-import { Book } from '../../entities/Book';
+import { Book } from '../entities/Book';
 
 @InputType()
 export class BookInput implements Partial<Book> {
   @Field()
-  title: String;
+  title!: String;
 
   @Field()
   @Length(1, 255)
-  author: String;
+  author!: String;
 
   @Field()
-  review: number;
+  review!: number;
 
   @Field()
-  stock: number;
+  stock!: number;
 
   @Field()
-  price: number;
+  price!: number;
 
   @Field()
-  publish_date: Date;
+  publish_date!: Date;
 
   @Field(() => String)
-  category_id: ObjectId;
+  category_id!: ObjectId;
 }

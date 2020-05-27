@@ -7,31 +7,31 @@ import { Categories } from './Categories';
 @ObjectType({ description: 'The Book model' })
 export class Book {
   @Field(() => ID)
-  id: String;
+  id!: String;
 
   @Field()
   @Property()
-  title: String;
+  title!: String;
 
   @Field()
   @Property()
-  author: String;
+  author!: String;
 
   @Field()
   @Property()
-  review: Number;
+  review!: Number;
 
   @Field()
   @Property()
-  publish_date: Date;
+  publish_date!: Date;
 
   @Field((_type) => Int)
   @Property()
-  stock: number;
+  stock!: number;
 
   @Field((_type) => Int)
   @Property()
-  price: number;
+  price!: number;
 
   @Field((_type) => String)
   @Property({ ref: Categories })

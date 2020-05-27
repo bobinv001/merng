@@ -1,6 +1,6 @@
 import { Resolver, Arg, Query, Mutation } from 'type-graphql';
 
-import { Book, BookModel } from '../entities/Book';
+import { Book, BookModel } from './entities/Book';
 import { BookInput } from './types/book-input';
 
 @Resolver(Book)
