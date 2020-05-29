@@ -1,0 +1,24 @@
+{
+  "name": "merng",
+  "version": "1.0.0",
+  "description": "A simple app using MERNG architecture using Typescript",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && npm run prod",
+    "server": "cd server && npm run start:prod",
+    "start": "npm-run-all client server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobinv001/MERNG.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bobinv001/MERNG/issues"
+  },
+  "homepage": "https://github.com/bobinv001/MERNG#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

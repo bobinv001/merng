@@ -1,5 +1,5 @@
 {
-  "name": "merng",
+  "name": "server",
   "version": "1.0.0",
   "description": "a simple application using react apollo graphQL mongoDB",
   "main": "index.js",
@@ -57,5 +57,8 @@
     ],
     "exec": "node --inspect=5858 -r ts-node/register src/index.ts",
     "ext": "ts"
+  },
+  "engines": {
+    "node": ">=12"
   }
 }
